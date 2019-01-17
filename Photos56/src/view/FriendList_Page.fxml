@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * Andrew Lowe (all157)
+ * Ronak Gandhi (rjg184)
+ -->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="559.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FriendListController">
+   <children>
+      <Button layoutX="32.0" layoutY="499.0" mnemonicParsing="false" onAction="#goToAddFriendPage" text="Add Friend" />
+      <ListView fx:id="friends" layoutX="32.0" layoutY="78.0" onMouseReleased="#clickOnFriend" prefHeight="409.0" prefWidth="268.0" />
+      <Label layoutX="115.0" layoutY="44.0" text="Your Friend List" />
+      <ListView fx:id="friendAlbums" layoutX="319.0" layoutY="134.0" prefHeight="255.0" prefWidth="268.0" />
+      <Label layoutX="400.0" layoutY="104.0" text="Friend's Albums" />
+      <Button layoutX="403.0" layoutY="406.0" mnemonicParsing="false" onAction="#goToFriendPhotosPage" text="View Album" />
+      <Button layoutX="191.0" layoutY="499.0" mnemonicParsing="false" onAction="#deleteFriend" text="Delete Friend" />
+      <Button layoutX="21.0" layoutY="24.0" mnemonicParsing="false" onAction="#goToUserPage" text="Back" />
+   </children>
+</AnchorPane>

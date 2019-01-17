@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * Andrew Lowe (all157)
+ * Ronak Gandhi (rjg184)
+ -->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="745.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserController">
+   <children>
+      <ListView fx:id="albums" layoutX="34.0" layoutY="155.0" onMouseReleased="#printAlbumInfo" prefHeight="413.0" prefWidth="247.0" />
+      <Label layoutX="111.0" layoutY="114.0" text="List of Albums:" />
+      <Label layoutX="368.0" layoutY="34.0" text="User Page: ">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <SplitPane layoutX="289.0" layoutY="114.0" prefHeight="158.0" prefWidth="434.0">
+         <items>
+            <AnchorPane prefHeight="261.0" prefWidth="427.0">
+               <children>
+                  <Button layoutX="169.0" layoutY="112.0" mnemonicParsing="false" onAction="#addAlbum" text="Add Album" />
+                  <Label layoutX="161.0" layoutY="14.0" text="Create Album">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="albumName" layoutX="161.0" layoutY="65.0" />
+                  <Label layoutX="47.0" layoutY="70.0" text="Album Name:" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <SplitPane layoutX="289.0" layoutY="280.0" prefHeight="233.0" prefWidth="434.0">
+         <items>
+            <AnchorPane prefHeight="261.0" prefWidth="427.0">
+               <children>
+                  <Button fx:id="updateRenameButton" layoutX="241.0" layoutY="174.0" mnemonicParsing="false" text="Update Name" />
+                  <Label layoutX="161.0" layoutY="14.0" text="Rename Album">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="renameName" layoutX="160.0" layoutY="124.0" />
+                  <Label fx:id="renameField" layoutX="69.0" layoutY="129.0" text="New Name:" />
+                  <Label layoutX="109.0" layoutY="52.0" text="Please Select an Album from the List" textFill="#ee0404" />
+                  <Button layoutX="180.0" layoutY="79.0" mnemonicParsing="false" onAction="#renameAlbum" text="Rename" />
+                  <Button fx:id="cancelRenameButton" layoutX="107.0" layoutY="174.0" mnemonicParsing="false" text="Cancel" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <SplitPane layoutX="735.0" layoutY="114.0" prefHeight="620.0" prefWidth="370.0">
+         <items>
+            <AnchorPane prefHeight="261.0" prefWidth="427.0">
+               <children>
+                  <Button layoutX="41.0" layoutY="506.0" mnemonicParsing="false" onAction="#searchByANDTagValuePair" text="Find Photos with 1st AND 2nd tag-value pair" />
+                  <Label layoutX="118.0" layoutY="14.0" text="Search for Photos ">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="73.0" text="Start Date:" />
+                  <Label layoutX="28.0" layoutY="216.0" text="Tag Name" />
+                  <Label layoutX="31.0" layoutY="254.0" text="Tag Value" />
+                  <Label layoutX="21.0" layoutY="424.0" text="Tag Name 2:" />
+                  <Label layoutX="22.0" layoutY="461.0" text="Tag Value 2:" />
+                  <Button layoutX="80.0" layoutY="286.0" mnemonicParsing="false" onAction="#searchByTagValuePair" text="Find Photos by tag-value pair" />
+                  <Label layoutX="212.0" layoutY="398.0" text="o" />
+                  <Label layoutX="21.0" layoutY="340.0" text="Tag Name 1:" />
+                  <Label layoutX="23.0" layoutY="377.0" text="Tag Value 1:" />
+                  <Button layoutX="47.0" layoutY="554.0" mnemonicParsing="false" onAction="#searchByORTagValuePair" text="Find Photos with 1st OR 2nd tag-value pair" />
+                  <Separator layoutY="324.0" prefHeight="4.0" prefWidth="370.0" />
+                  <Label layoutX="25.0" layoutY="109.0" text="End Date:" />
+                  <Separator layoutY="190.0" prefHeight="4.0" prefWidth="370.0" />
+                  <Button layoutX="90.0" layoutY="151.0" mnemonicParsing="false" onAction="#searchByDateRange" text="Find Photos by date range" />
+                  <DatePicker fx:id="startDateField" layoutX="112.0" layoutY="68.0" />
+                  <DatePicker fx:id="endDateField" layoutX="112.0" layoutY="104.0" />
+                  <TextField fx:id="tagName" layoutX="117.0" layoutY="211.0" prefHeight="31.0" prefWidth="190.0" />
+                  <TextField fx:id="tagValue" layoutX="117.0" layoutY="249.0" prefHeight="31.0" prefWidth="190.0" />
+                  <TextField fx:id="tagName1" layoutX="117.0" layoutY="335.0" prefHeight="31.0" prefWidth="190.0" />
+                  <TextField fx:id="tagValue1" layoutX="117.0" layoutY="372.0" prefHeight="31.0" prefWidth="190.0" />
+                  <TextField fx:id="tagName2" layoutX="117.0" layoutY="419.0" prefHeight="31.0" prefWidth="190.0" />
+                  <TextField fx:id="tagValue2" layoutX="117.0" layoutY="456.0" prefHeight="31.0" prefWidth="190.0" />
+                  <Label layoutX="130.0" layoutY="44.0" text="Format is MM/DD/YYYY" textFill="#ff0101">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#goToLoginPage" text="Logout" />
+      <Button layoutX="1076.0" layoutY="19.0" mnemonicParsing="false" onAction="#closeApp" text="X" />
+      <Label layoutX="63.0" layoutY="134.0" text="Click on an Album to open it" textFill="#eb0c0c" />
+      <Label fx:id="currentUser" layoutX="566.0" layoutY="35.0" prefHeight="58.0" prefWidth="387.0">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <SplitPane layoutX="290.0" layoutY="523.0" prefHeight="208.0" prefWidth="214.0">
+         <items>
+            <AnchorPane prefHeight="261.0" prefWidth="427.0">
+               <children>
+                  <Label layoutX="46.0" layoutY="14.0" text="Delete Album">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="30.0" layoutY="103.0" mnemonicParsing="false" onAction="#deleteAlbum" prefHeight="69.0" prefWidth="153.0" text="Delete Album">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="54.0" layoutY="62.0" text="Select an album" textFill="#eb0c0c" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <SplitPane layoutX="509.0" layoutY="523.0" prefHeight="210.0" prefWidth="214.0">
+         <items>
+            <AnchorPane prefHeight="261.0" prefWidth="427.0">
+               <children>
+                  <Label layoutX="53.0" layoutY="14.0" text="View Album">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="30.0" layoutY="104.0" mnemonicParsing="false" onAction="#goToAlbumPage" prefHeight="69.0" prefWidth="153.0" text="View Album">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="56.0" layoutY="62.0" text="Select an album" textFill="#eb0c0c" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <ListView fx:id="viewAlbumInfo" layoutX="34.0" layoutY="603.0" prefHeight="128.0" prefWidth="247.0" />
+      <Label layoutX="111.0" layoutY="576.0" text="Album Details" />
+      <Button fx:id="FriendsListButton" layoutX="965.0" layoutY="19.0" mnemonicParsing="false" onAction="#goToFriendListPage" text="Friends List" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Android56</string>
+    <string name="add_alb">Add Album</string>
+    <string name="delete_alb">Delete Album</string>
+    <string name="add_pho">Add Photo</string>
+    <string name="delete_pho">Delete Photo</string>
+    <string name="move_pho">Move Photo</string>
+    <string name="add_tag_location">Add Location Tag</string>
+    <string name="add_tag_person">Add Person Tag</string>
+    <string name="del_tag">Delete Tag</string>
+
+</resources>
